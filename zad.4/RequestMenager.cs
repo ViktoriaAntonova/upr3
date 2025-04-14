@@ -9,13 +9,14 @@ namespace zad._4
     internal class RequestMenager
     {
         HashSet<string> hash = new HashSet<string>();
-        Queue<string> q = new Queue<string>();
+        Queue<FileRequest> q = new Queue<FileRequest>();
         public void Add(FileRequest request)
         {
+
             if (!hash.Contains(request.Name))
             {
-                hash.Add(request.Name);
-                q.Enqueue(request.Name); 
+                hash.Add(request.Name); 
+                q.Enqueue(request);  
             }
         }
         public void PrintRequests()
